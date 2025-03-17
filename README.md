@@ -50,6 +50,66 @@ uvicorn
 jinja2
 ```
 
+# Setting Up the CSV Reader Virtual Environment
+
+Follow these steps to create and set up the Python virtual environment for the CSV Reader project.
+
+## **1️⃣ Install Python & Virtual Environment Tools**
+Ensure you have **Python 3.8+** and `venv` installed.
+
+### **Ubuntu**
+```bash
+sudo apt update && sudo apt install -y python3 python3-venv python3-pip
+```
+
+### **RHEL**
+```bash
+sudo yum install -y python3 python3-venv python3-pip
+```
+
+## **2️⃣ Create the Virtual Environment**
+Navigate to the project directory and create a virtual environment:
+```bash
+cd /home/jasonr/dev/csv_reader_page
+python3 -m venv csv_reader_page_venv
+```
+
+## **3️⃣ Activate the Virtual Environment**
+
+### **On Linux/macOS:**
+```bash
+source csv_reader_page_venv/bin/activate
+```
+
+### **On Windows (Command Prompt):**
+```cmd
+csv_reader_page_venv\Scripts\activate
+```
+
+### **On Windows (PowerShell):**
+```powershell
+csv_reader_page_venv\Scripts\Activate.ps1
+```
+
+## **4️⃣ Install Required Dependencies**
+
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+## **5️⃣ (Optional) Verify Installation**
+Check if FastAPI and Uvicorn are installed:
+```bash
+python -c "import fastapi, uvicorn; print('FastAPI and Uvicorn are installed')"
+```
+
+## **6️⃣ Deactivate Virtual Environment**
+To exit the virtual environment:
+```bash
+deactivate
+```
+
 ## **5️⃣ Test Running the Application Manually**
 
 Before setting it up as a service, test that it runs correctly:
@@ -126,5 +186,5 @@ sudo systemctl disable csv_reader.service
 
 ---
 
-## **✅ Done!**
+## **✅ Done**
 Your CSV Reader FastAPI service should now be running as a background process.
